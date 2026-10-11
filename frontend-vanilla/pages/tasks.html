@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow | Tasks</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>TaskFlow</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <form id="task-form" class="task-form">
+      <input type="text" id="task-input" placeholder="New task" required />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="task-list" class="task-list"></ul>
+  </main>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
