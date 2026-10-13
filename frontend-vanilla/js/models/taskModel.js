@@ -18,3 +18,8 @@ export function addTask(text) {
   saveTasks(tasks);
   return task;
 }
+
+export function deleteTask(id) {
+  tasks = tasks.filter((task) => task.id !== id);
+  saveTasks(tasks);
+}

@@ -10,7 +10,13 @@ function handleAdd() {
   view.clearInput();
 }
 
+function handleDelete(id) {
+  model.deleteTask(id);
+  view.renderTasks(model.getTasks());
+}
+
 export function init() {
   view.renderTasks(model.getTasks());
   view.onSubmit(handleAdd);
+  view.onDelete(handleDelete);
 }

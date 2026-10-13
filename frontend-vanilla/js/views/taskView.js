@@ -16,8 +16,18 @@ export function renderTasks(tasks) {
 
   tasks.forEach((task) => {
     const li = document.createElement("li");
-    li.textContent = task.text;
     li.dataset.id = task.id;
+
+    const text = document.createElement("span");
+    text.textContent = task.text;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "delete-button";
+    deleteButton.dataset.id = task.id;
+    deleteButton.textContent = "Delete";
+
+    li.append(text, deleteButton);
     list.appendChild(li);
   });
 }
@@ -26,5 +36,12 @@ export function onSubmit(handler) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     handler();
+  });
+}
+
+export function onDelete(handler) {
+  list.addEventListener("click", (event) => {
+    if (!event.target.matches(".delete-button")) return;
+    handler(event.target.dataset.id);
   });
 }
