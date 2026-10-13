@@ -23,3 +23,17 @@ export function deleteTask(id) {
   tasks = tasks.filter((task) => task.id !== id);
   saveTasks(tasks);
 }
+
+export function completeTask(id) {
+  tasks = tasks.map((task) =>
+    task.id === id ? { ...task, done: true } : task
+  );
+  saveTasks(tasks);
+}
+
+export function markTaskNotDone(id) {
+  tasks = tasks.map((task) =>
+    task.id === id ? { ...task, done: false } : task
+  );
+  saveTasks(tasks);
+}
